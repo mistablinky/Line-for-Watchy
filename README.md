@@ -2,11 +2,11 @@
 
 Analog Watchface for Watchy E-Paper Watch
 
-Design inspired by [Line Watch Face for Google Wear OS by Seahorsepip](
+Design inspired by ![Line Watch Face for Google Wear OS by Seahorsepip](
 https://play.google.com/store/apps/details?id=com.seapip.thomas.line_watchface)
 
-![Line for Watchy Light Mode](/images/line-for-watchy_light.png)
-![Line for Watchy Dark Mode](/images/line-for-watchy_dark.png)
+[Line for Watchy Light Mode](/images/line-for-watchy_light.png)
+[Line for Watchy Dark Mode](/images/line-for-watchy_dark.png)
 
 **Setup**
 - Follow the instructions on ![https://github.com/sqfmi/Watchy](https://github.com/sqfmi/Watchy) to setup your Arduino IDE for Watchy
@@ -19,4 +19,4 @@ The Watchy time will automatically set to the watchface upload time in case the 
 
 **Free Culture License**
 This work is licensed under a Creative Commons *Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)*.
-Adaptations and commercial use are allowed AS LONG AS OTHERS SHARE ALIKE. [License terms](https://creativecommons.org/licenses/by-sa/4.0/)
+Adaptations and commercial use are allowed AS LONG AS OTHERS SHARE ALIKE. ![License terms](https://creativecommons.org/licenses/by-sa/4.0/)
