@@ -15,15 +15,15 @@ Design inspired by [Line Watch Face for Google Wear OS by Seahorsepip](https://p
 - Make sure the ```RTClib.h``` by Adafruit is installed (tested with version 1.12.4)
 - Make sure the ```WiFi.h``` and ```time.h``` libraries are installed
 - Create a folder ```Line-for-Watchy``` and copy all files from the repository to it
-- For ntp time server synchronization add the file ```secrets.h``` to that folder with the folowing two lines:
+- For ntp time server synchronization add the file ```secrets.h``` to that folder with the following two lines:
 ```c++
 const char* ssid = "yourWiFiNetworkName";
 const char* password = "yourWiFiNetworkPassword";
 ```
-- Open the File ```Line-for-Watchy.ino``` with your Arduino IDE and upload to your Watchy
-- The ntp time will be translated to your local time based on the time zone settings in line 35. The default is Europe/Berlin - adapt according to the [posix_tz_db](https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv) if necessary
-- Toggle between light and dark mode in Line 49 - The default is dark mode.
-- Enjoy :)
+- Open the File ```Line-for-Watchy.ino``` with your Arduino IDE and make the following adaptations if necessary
+  - The ntp time will be translated to your local time based on the time zone settings in line 35. The default is Europe/Berlin - adapt according to the [posix_tz_db](https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv) if necessary
+  - Toggle between light and dark mode in Line 49 - The default is dark mode.
+- Upload to your Watchy and Enjoy :)
 
 After uploading the watch face (on reset) Watchy tries automatically to connect to your WiFi and obtain current date and time from ntp time server. If that fails Watchy will be synchronized with the compile date and time.
 
