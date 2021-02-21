@@ -12,9 +12,9 @@ Design inspired by [Line Watch Face for Google Wear OS by Seahorsepip](https://p
 
 **Setup**
 - Follow the instructions on [https://github.com/sqfmi/Watchy](https://github.com/sqfmi/Watchy) to setup your Arduino IDE for Watchy
-- Make sure the RTClib by Adafruit is installed (tested with version 1.12.4)
-- Make sure the WiFi and time libraries are installed
-- Create a folder "Line-for-Watchy" and copy all files from the repository to it
+- Make sure the ```RTClib.h``` by Adafruit is installed (tested with version 1.12.4)
+- Make sure the ```WiFi.h``` and ```time.h``` libraries are installed
+- Create a folder ```Line-for-Watchy``` and copy all files from the repository to it
 - For ntp time server synchronization add the file ```secrets.h``` to that folder with the folowing two lines:
 ```c++
 const char* ssid = "yourWiFiNetworkName";
