@@ -5,7 +5,6 @@ Analog Watchface for Watchy E-Paper Watch
 Design inspired by [Line Watch Face for Google Wear OS by Seahorsepip](https://play.google.com/store/apps/details?id=com.seapip.thomas.line_watchface)
 
 ![Line for Watchy Dark Mode](/images/line-for-watchy.png)
-
 ![Line for Watchy](/images/23_Line.gif) Gif by [SQFMI](https://watchy.sqfmi.com/)  
 
 
