@@ -20,7 +20,7 @@ Design inspired by [Line Watch Face for Google Wear OS by Seahorsepip](https://p
 const char* ssid = "yourWiFiNetworkName";
 const char* password = "yourWiFiNetworkPassword";
 ```
-- Open the ino File with your Arduino IDE and upload to your Watchy
+- Open the File ```Line-for-Watchy.ino``` with your Arduino IDE and upload to your Watchy
 - The ntp time will be translated to your local time based on the time zone settings in line 35. The default is Europe/Berlin - adapt according to the [posix_tz_db](https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv) if necessary
 - Enjoy :)
 
