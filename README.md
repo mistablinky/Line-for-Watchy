@@ -25,7 +25,7 @@ const char* password = "yourWiFiNetworkPassword";
   - Toggle between light and dark mode in Line 49 - The default is dark mode.
 - Upload to your Watchy and Enjoy :)
 
-After uploading the watch face (on reset) Watchy tries automatically to connect to your WiFi and obtain current date and time from ntp time server. If that fails Watchy will be synchronized with the compile date and time.
+On reset (after uploading the watch face) Watchy tries automatically to connect to your WiFi and obtain current date and time from ntp time server. If that fails Watchy will be synchronized with the compile date and time.
 
 **Changelog**
 - 0.1 (2021-02-13): initial version
