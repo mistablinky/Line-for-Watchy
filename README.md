@@ -22,6 +22,7 @@ const char* password = "yourWiFiNetworkPassword";
 ```
 - Open the File ```Line-for-Watchy.ino``` with your Arduino IDE and upload to your Watchy
 - The ntp time will be translated to your local time based on the time zone settings in line 35. The default is Europe/Berlin - adapt according to the [posix_tz_db](https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv) if necessary
+- Toggle between light and dark mode in Line 49 - The default is dark mode.
 - Enjoy :)
 
 After uploading the watch face (on reset) Watchy tries automatically to connect to your WiFi and obtain current date and time from ntp time server. If that fails Watchy will be synchronized with the compile date and time.
