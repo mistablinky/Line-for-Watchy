@@ -26,6 +26,10 @@ const char* password = "yourWiFiNetworkPassword";
 
 After uploading the watch face (on reset) Watchy tries automatically to connect to your WiFi and obtain current date and time from ntp time server. If that fails Watchy will be synchronized with the compile date and time.
 
+**Changelog**
+- 0.1 (2021-02-13): initial version
+- 0.2 (2021-02-21): added ntp time server synchronization
+
 **Free Culture License**
 This work is licensed under a Creative Commons *Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)*.
 Adaptations and commercial use are allowed AS LONG AS OTHERS SHARE ALIKE. [License terms](https://creativecommons.org/licenses/by-sa/4.0/)
