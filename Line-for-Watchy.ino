@@ -1,4 +1,4 @@
-// ---------------------- Line-for-Watchy 0.1 -------------------------------
+// ---------------------- Line-for-Watchy 0.2 -------------------------------
 /////////////////////////////////////////////////////////////////////////////
 // Analog Watchface for Watchy E-Paper Watch
 // Design inspired by Line Watch Face for Google Wear OS by Seahorsepip
@@ -25,8 +25,19 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include <Watchy.h>
-#include "RTClib.h"
+#include <WiFi.h>
+#include <RTClib.h>
+#include <time.h>
+#include "secrets.h"
 #include "DSEG7_Classic_Regular_39.h"
+
+// define time zone
+#define TIMEZONE "CET-1CEST,M3.5.0,M10.5.0/3" // Europe/Berlin
+// find yours: https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv
+
+const char* ntp_server = "pool.ntp.org";
+struct tm timeinfo;
+String datetime;
 
 //inherit and extend Watchy class
 class WatchFace : public Watchy {
@@ -35,7 +46,7 @@ class WatchFace : public Watchy {
     void drawWatchFace() {
 
       // toggle between light and dark mode
-      bool light = true;
+      bool light = false;
       
       uint8_t myHour;
       uint8_t myMinute;
@@ -125,22 +136,33 @@ class WatchFace : public Watchy {
   }
 };
 
-//instantiate watchface and rtc
+//instantiate watchface
 WatchFace m;
-RTC_DS3231 rtc;
 
 void setup(){
 
-  // start rtc and set time, if necessary
-  rtc.begin();
-  if (rtc.lostPower()) {
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-    // This line sets the RTC with an explicit date & time, for example to set
-    // January 21, 2014 at 3am you would call:
-    // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+  // trying to connect to WiFi and obtain current date and time from ntp time server
+  WiFi.begin(ssid, password);
+  delay(3000);
+  if (WiFi.status() == WL_CONNECTED) {
+    char timeStringBuff[50];
+    configTime(0, 0, ntp_server);
+    setenv("TZ", TIMEZONE, 1);
+    getLocalTime(&timeinfo);
+    WiFi.disconnect(true);
+    WiFi.mode(WIFI_OFF);
+    strftime(timeStringBuff, sizeof(timeStringBuff), "%Y:%m:%d:%H:%M:%S", &timeinfo);
+    datetime = timeStringBuff;
+
+  // otherwise take compile date and time
+  } else {
+    char timeStringBuff[] = "YYYY:MM:DD:hh:mm:ss";
+    DateTime compileTime = DateTime(F(__DATE__), F(__TIME__));  
+    datetime = compileTime.toString(timeStringBuff);
   }
-  
-  m.init();
+
+  // initialising watchy with date and time as "Year:Month:Day:Hour:Minute:Second" on reset
+  m.init(datetime);
 }
 
 void loop() {
