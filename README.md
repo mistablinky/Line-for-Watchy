@@ -4,10 +4,11 @@ Analog Watchface for Watchy E-Paper Watch
 
 Design inspired by [Line Watch Face for Google Wear OS by Seahorsepip](https://play.google.com/store/apps/details?id=com.seapip.thomas.line_watchface)
 
-![Line for Watchy](/images/23_Line.gif)  
-Image by [SQFMI](https://watchy.sqfmi.com/)  
-
 ![Line for Watchy Dark Mode](/images/line-for-watchy.png)
+
+![Line for Watchy](/images/23_Line.gif) Gif by [SQFMI](https://watchy.sqfmi.com/)  
+
+
 
 **Setup**
 - Follow the instructions on [https://github.com/sqfmi/Watchy](https://github.com/sqfmi/Watchy) to setup your Arduino IDE for Watchy
